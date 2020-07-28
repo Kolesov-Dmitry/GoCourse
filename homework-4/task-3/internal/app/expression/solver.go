@@ -13,14 +13,6 @@ type Solver struct {
 	stack  []float64
 }
 
-// NewSolver makes new Solver object instance
-func NewSolver() *Solver {
-	return &Solver{
-		tokens: nil,
-		stack:  make([]float64, 0),
-	}
-}
-
 // Solve evalueates algebraic expressions
 // Input:
 //  - expr is algebraic expressions
@@ -41,6 +33,8 @@ func (s *Solver) Solve(expr string) (float64, error) {
 	}
 
 	s.tokens = rpnTokens
+	s.stack = make([]float64, 0)
+
 	return s.solveExpression()
 }
 

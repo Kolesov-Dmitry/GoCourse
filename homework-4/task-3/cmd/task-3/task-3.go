@@ -37,7 +37,7 @@ func printHelp() {
 }
 
 func main() {
-	solver := expression.NewSolver()
+	var solver expression.Solver
 	for {
 		userInput := getUserInput()
 		if userInput == "exit" {
